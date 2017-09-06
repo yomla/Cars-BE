@@ -33,7 +33,7 @@ class CarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Cars $request)
     {
         return Car::create($request->all());
     }
@@ -67,7 +67,7 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Car $id)
+    public function update(Cars $request, Car $id)
     {
         $car = Car::findOrFail($id);
         $car->update($request->all());
